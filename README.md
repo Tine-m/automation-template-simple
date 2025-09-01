@@ -2,10 +2,12 @@
 
 This is a **template repository**.
 It includes useful **.github/** defaults that work with the built‑in `GITHUB_TOKEN` only:
-- PR template, CODEOWNERS, Issue templates
-- Labeler (path-based labels for PRs)
-- Stale issue cleanup
-- Issue Metrics (weekday comment) and Team Metrics (weekly `metrics.md`)
+- PR template, Issue templates
+- CODEOWNERS (to auto-request reviewers)
+- Labeler (path-based labels for PRs) `.github/labeler.yml`
+- Stale issue cleanup `.github/workflows/stale.yml`
+- Issue Metrics  `.github/workflows/issue-metrics.yml` – daily/weekday Issue Metrics comment (throughput, time-to-first-response, time-to-close)
+- Team Metrics `.github/workflows/team-metrics.yml` - weekly report `metrics.md`) (opened/closed counts) committed to repo
 
 > No Personal Access Tokens. No Project URLs. Works in a single repo.
 
