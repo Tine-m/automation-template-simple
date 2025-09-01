@@ -18,7 +18,7 @@ This **template repository** contains:
 3. Push code and open PRs — workflows run automatically.
 
 ## Project board
-Use use **Project built-in workflows** in the GitHub UI:
+Use **Project built-in workflows** in the GitHub UI:
 - When item added → set **Status = To Do**
 - When issue closed → set **Status = Done**
 - When PR merged → set **Status = Done**
