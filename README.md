@@ -14,11 +14,12 @@ It includes useful **.github/** defaults that work with the built‑in `GITHUB_T
 2. In your new repo:
    - Edit `.github/CODEOWNERS` to reflect your teams/users.
    - Edit `.github/labeler.yml` to match your folder layout.
+   - Add labels (under Issues or Pull requests in the GitHub UI)
 3. Push code and open PRs — workflows run automatically.
 
-## Optional: Project board (UI, no YAML)
-If you want a board, use **Project built-in workflows** in the GitHub UI (no tokens needed):
-- When item added → set **Status = Triage**
+## Project board (UI, no YAML)
+If you want a board, use **Project built-in workflows** in the GitHub UI:
+- When item added → set **Status = To Do**
 - When issue closed → set **Status = Done**
 - When PR merged → set **Status = Done**
 
