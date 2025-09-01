@@ -1,0 +1,9 @@
+search: "repo:${{ github.repository }} is:issue created:>=@w-1"
+metrics:
+  - count
+  - timeToFirstResponse
+  - timeToClose
+report:
+  label: "team-metrics"
+  addLabels: true
+  commentOnIssue: 1   # posts on issue #1 (e.g., a pinned tracking issue)

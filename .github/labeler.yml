@@ -1,0 +1,14 @@
+# Map labels to file path globs (edit to match your repo)
+frontend:
+  - "web/**"
+  - "ui/**"
+backend:
+  - "service/**"
+  - "api/**"
+database:
+  - "persistence/**"
+devops:
+  - ".github/**"
+  - "infra/**"
+docs:
+  - "docs/**"

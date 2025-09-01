@@ -1,0 +1,31 @@
+name: Team metrics report
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate metrics (last 7 days)
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo
+            const since = new Date(Date.now() - 7*24*3600*1000).toISOString()
+            const result = await github.paginate(github.rest.search.issuesAndPullRequests, {
+              q: `repo:${owner}/${repo} created:>=${since}`
+            })
+            const opened = result.length
+            const closed = result.filter(i => i.state === 'closed').length
+            const md = `# Weekly Metrics\n\n- Opened: ${opened}\n- Closed: ${closed}\n\nGenerated: ${new Date().toISOString()}\n`
+            const fs = require('fs'); fs.writeFileSync('metrics.md', md)
+      - name: Commit report
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add metrics.md
+          git commit -m "chore(metrics): update weekly metrics" || echo "No changes"
+          git push

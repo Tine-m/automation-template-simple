@@ -1,0 +1,4 @@
+# Update these paths & teams/users for your repo
+/docs/           @docs-team
+/frontend/       @web-team
+/backend/        @api-team

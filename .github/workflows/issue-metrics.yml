@@ -1,0 +1,14 @@
+name: Issue Metrics
+on:
+  schedule:
+    - cron: "0 7 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/issue-metrics@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-path: .github/issue-metrics-config.yml

@@ -1,0 +1,17 @@
+name: Stale
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          days-before-stale: 30
+          days-before-close: 7
+          stale-issue-message: "This issue is stale. Please update or it'll close in 7 days."
+          close-issue-message: "Closing due to inactivity. Reopen if still relevant."
+          exempt-issue-labels: "pinned,security"
