@@ -30,7 +30,7 @@ Use **Project built-in workflows** in the GitHub UI:
 
 ## Metrics & Reports
 
-We collect lightweight team metrics:
+Collection of lightweight team metrics:
 - Daily bot comment → response time, closure time `.github/workflows/issue-metrics.yml`
 - Weekly metrics.md → opened vs closed issues/PRs `.github/workflows/team-metrics.yml`
 
